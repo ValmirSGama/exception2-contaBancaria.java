@@ -65,12 +65,13 @@ public class Account {
 		balance -= amount;
 	}
 	
+	// Método para validar o limite de saque.
 	public void validatewithdrawLimit(double amount) {
 		if(amount > getWithdrawLimit()) {
 			throw new BusinessException("Erro de saque: A quantia excede o limite de saque.");
 		}
 		if(amount > getBalance()) {
-			throw new BusinessException("Erro de sague: Saldo e insuficiente");
+			throw new BusinessException("Erro de sague: Saldo é insuficiente");
 		}
 	}
 }
